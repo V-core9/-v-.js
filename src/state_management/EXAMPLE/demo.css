@@ -1,3 +1,11 @@
+* {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 0 2px black;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -43,7 +51,7 @@ h3 {
   align-items: center;
   height: 100%;
   flex: 1;
-  border: .5em solid #142b42;
+  border: 0.5em solid #142b42;
   max-width: 1280px;
   min-height: 100vh;
   box-shadow: 0 0 50px #08589f;
@@ -54,7 +62,7 @@ h3 {
 
 button {
   font-size: 1em;
-  margin: .0;
+  margin: 0;
   padding: 0.35em 1em;
   border-radius: 1em;
   border: none;
@@ -81,14 +89,15 @@ button:hover {
   align-items: center;
 }
 
-.baseElem h3, p {
+.baseElem h3,
+p {
   margin: 0;
 }
 
 .baseElem actions {
   display: flex;
-  gap: .25em;
-  padding: .5em;
+  gap: 0.25em;
+  padding: 0.5em;
   flex-flow: wrap;
   justify-content: space-between;
   box-shadow: 0 0 25px #00000050 inset;
@@ -118,13 +127,13 @@ main {
 
 header {
   display: flex;
-  width: calc( 100% - 0em);
+  width: calc(100% - 0em);
   /* font-size: 2em; */
   background: #0d3258;
-  padding: .25em 1em;
+  padding: 0.25em 1em;
   border-radius: 2em;
   border: 3px #0f2438 double;
-  margin: .5em 0;
+  margin: 0.5em 0;
   /* box-shadow: 0 0 20px 0 #00000070 inset; */
   border-right: 7.5px solid #0f2438;
   border-left: 7.5px solid #0f2438;
@@ -142,7 +151,7 @@ header {
   text-shadow: 0 0 2.5px black;
   font-size: 18px;
   min-height: 2em;
-  padding: 0 .5em;
+  padding: 0 0.5em;
   line-height: 2em;
   text-align: end;
 }
@@ -153,16 +162,8 @@ footer {
   color: #0085ff;
   justify-content: center;
   align-items: center;
-  padding: .25em 1em;
+  padding: 0.25em 1em;
   border-top: 5px dashed #041a30;
-}
-
-* {
-  font-family: monospace;
-  font-size: 14px;
-  font-weight: 400;
-  color: white;
-  text-shadow: 0 0 2px black;
 }
 
 header h1 {
