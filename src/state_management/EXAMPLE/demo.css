@@ -27,25 +27,19 @@ h3 {
   margin: 0;
   width: 100%;
   display: block;
-  flex-direction: column;
   overflow: hidden;
-  background: #122941c9;
-  max-width: calc(50% - 4em);
-  border: 1px solid #122941;
+  background: #122941;
+  max-width: calc(50% - 2em);
+  border: 4px solid #0d3258;
+  outline: 1px solid black;
   box-shadow: 0 10px 10px -10px #000000;
   border-radius: 1em;
-  border-left: .25em solid #122941;
-  border-right: .25em solid #122941;
   user-select: none;
-  min-height: 0;
-  flex: none;
-  max-height: 6em;
 }
 
 #CoreAppID {
   display: flex;
   flex-direction: column;
-  font-family: monospace;
   align-items: center;
   height: 100%;
   flex: 1;
@@ -55,6 +49,7 @@ h3 {
   box-shadow: 0 0 50px #08589f;
   border-top-width: 0;
   border-bottom-width: 0;
+  outline: 1px solid black;
 }
 
 button {
@@ -81,8 +76,9 @@ button:hover {
 
 .baseElem info {
   display: flex;
-  align-items: center;
   user-select: text;
+  flex-direction: row;
+  align-items: center;
 }
 
 .baseElem h3, p {
@@ -95,66 +91,82 @@ button:hover {
   padding: .5em;
   flex-flow: wrap;
   justify-content: space-between;
-  box-shadow: 0 0 20px #00000075 inset;
+  box-shadow: 0 0 25px #00000050 inset;
+  outline: 4px solid #0d3258;
 }
 
 main {
   display: flex;
-  flex-direction: row;
   gap: 1em;
   padding: 1em;
   flex-wrap: wrap;
-  /* width: calc(100% - 2em); */
   flex: 1;
-  justify-content: center;
-  /* align-content: center; */
   justify-content: space-evenly;
-  align-content: start;
+  align-content: flex-start;
 }
 
 .baseElem info h3 {
-  flex: 1;
   white-space: nowrap;
-  max-width: 33.3%;
-  margin: 0;
-  padding: 0.5em;
+  padding: 0 1em 0 1em;
+  border-right: 1em solid #122941;
   overflow: hidden;
   font-weight: 100;
   color: #fff;
+  text-shadow: 0 0 2px black;
+  font-size: 12px;
 }
 
 header {
   display: flex;
-  width: 100%;
-  /* flex: 720px; */
-  background: #164a7a;
+  width: calc( 100% - 0em);
+  /* font-size: 2em; */
+  background: #0d3258;
   padding: .25em 1em;
-  border-radius: 1em;
-  border: 2px solid #0f2438;
-  margin: 1em;
-  box-shadow: 0 0 15px 0 #1c4d7e;
-  border-right: 5px solid #0f2438;
-  border-left: 5px solid #0f2438;
+  border-radius: 2em;
+  border: 3px #0f2438 double;
+  margin: .5em 0;
+  /* box-shadow: 0 0 20px 0 #00000070 inset; */
+  border-right: 7.5px solid #0f2438;
+  border-left: 7.5px solid #0f2438;
+  outline: 1px solid #000000;
+  z-index: 200;
 }
 
 .baseElem info h3.dataInfoPart {
-  max-width: 100%;
-  border: .2em solid #122941;
   width: 100%;
-  border-radius: 0 .8em 0 0;
-  background: #204060;
-  color: #a7d8ff;
+  border: none;
+  border-left: 5px solid #0d3258;
+  background: #164a7a;
+  color: #b9e0ff;
   white-space: pre-wrap;
   text-shadow: 0 0 2.5px black;
-  min-height: 1em;
+  font-size: 18px;
+  min-height: 2em;
+  padding: 0 .5em;
+  line-height: 2em;
+  text-align: end;
 }
 
 footer {
-  width: calc(100% - 2em);
-  background: #112438;
+  width: calc(100% - 1em);
+  background: #132b42;
   color: #0085ff;
   justify-content: center;
-  border: 5px solid #142b42;
   align-items: center;
-  padding: .5em 1em;
+  padding: .25em 1em;
+  border-top: 5px dashed #041a30;
+}
+
+* {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  text-shadow: 0 0 2px black;
+}
+
+header h1 {
+  font-size: 2em;
+  font-weight: boldest;
+  font-family: ui-sans-serif sans-serif;
 }
