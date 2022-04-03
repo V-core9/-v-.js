@@ -36,23 +36,30 @@ const vComponents = {
 
 
 
-function V_Base(data = {}) {
-  this.id = data.id || "app";
+class V_Base  {
 
-  this.data = data.data || {};
 
-  this.view = data.view || (() => console.log("Missing VIEW() Method"));
+  constructor(data) {
 
-  this.update = data.update || (() => console.log("Missing UPDATE() Method"));
+    this.id = data.id || "app";
 
-  this.state = (value) => {
-    this.data = value;
-    this.update();
-  };
+    this.data = data.data || {};
 
-  this.methods = data.methods || {};
+    this.view = data.view || (() => console.log("Missing VIEW() Method"));
 
-  vComponents.add(this);
+    this.update = data.update || (() => console.log("Missing UPDATE() Method"));
+
+    this.state = (value) => {
+      this.data = value;
+      this.update();
+    };
+
+    this.methods = data.methods || {};
+
+    vComponents.add(this);
+  }
+
+
 }
 
 
