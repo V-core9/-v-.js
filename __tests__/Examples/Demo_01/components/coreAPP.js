@@ -1,5 +1,5 @@
-const { printButton, clickExec } = require("../../helpers");
-const { V_Base } = require('../../core');
+const { printButton, clickExec } = require("../../../../src/state_management/helpers");
+const { V_Base } = require('../../../../src/state_management/core');
 
 
 /*
@@ -7,6 +7,7 @@ const { V_Base } = require('../../core');
  */
 module.exports = coreAPP = new V_Base({
 
+  // Just to be able to navigate it easier [id]
   id: "CoreAppID",
 
   data: "Core App",

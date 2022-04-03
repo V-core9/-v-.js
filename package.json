@@ -7,7 +7,7 @@
     "test": "jest",
     "start": "node app.js",
     "dev": " bash -c \" NODE_ENV=development node app.js \" ",
-    "build": "webpack --config webpack.StateManage.js"
+    "build:example": "webpack --config __tests__/Examples/Demo_01/webpack.js"
   },
   "repository": {
     "type": "git",

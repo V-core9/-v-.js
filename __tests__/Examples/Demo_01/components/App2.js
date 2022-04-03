@@ -1,5 +1,5 @@
-const { printButton, clickExec } = require("../../helpers");
-const { V_Base } = require('../../core');
+const { printButton, clickExec } = require("../../../../src/state_management/helpers");
+const { V_Base } = require('../../../../src/state_management/core');
 
 
 /*
@@ -8,20 +8,23 @@ const { V_Base } = require('../../core');
 
 module.exports = App2 = new V_Base({
 
+  // Just to be able to navigate it easier [.id]
   id: "Application_Component_Base",
 
+  // Some Example Value to Play With [.data]
   data: 1240,
 
+  // This is where we actually render HTML that will be printed. [.view()]
   view: async () => {
     return `<info>
               <h3>${App2.id}</h3>
               <h3 class="dataInfoPart">${App2.data}</h3>
             </info>
             <actions>
-              ${await printButton('Set [11]', "set1")}
-              ${await printButton('Set [44]', "set4")}
-              ${await printButton('🔼 Increment', "inc")}
-              ${await printButton('🔻 Decrement', "dec")}
+              ${await printButton('Set [1]', "set1", () => App2.state(1))}
+              ${await printButton('Set [4]', "set4", () => App2.state(4))}
+              ${await printButton('🔼 Increment', "inc", () => App2.state(App2.data + 1))}
+              ${await printButton('🔻 Decrement', "dec", () => App2.state(App2.data - 1))}
             </actions>`;
   },
 

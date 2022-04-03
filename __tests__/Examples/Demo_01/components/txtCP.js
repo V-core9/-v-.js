@@ -1,11 +1,12 @@
-const { printButton, clickExec } = require("../../helpers");
-const { V_Base } = require('../../core');
+const { printButton, clickExec } = require("../../../../src/state_management/helpers");
+const { V_Base } = require('../../../../src/state_management/core');
 
 /*
  * txtCP ::Text Variable Example
  */
 const txtCP = new V_Base({
 
+  // Just to be able to navigate it easier [id]
   id: "Text_Component_Base",
 
   data: "Example String INIT Value.",
