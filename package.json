@@ -1,0 +1,28 @@
+{
+  "name": "-v-",
+  "version": "1.0.0",
+  "description": "-v-.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node app.js",
+    "dev": " bash -c \" NODE_ENV=development node app.js \" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-core9/-v-.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V-core9/-v-.js/issues"
+  },
+  "homepage": "https://github.com/V-core9/-v-.js#readme",
+  "dependencies": {
+    "v_file_system": "^1.0.5"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
