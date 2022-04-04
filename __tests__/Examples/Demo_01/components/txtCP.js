@@ -1,5 +1,5 @@
-const { printButton, clickExec } = require("../../../../src/state_management/helpers");
-const { V_Base } = require('../../../../src/state_management/core');
+const { printButton, clickExec } = require("../../../../src/state_manager/helpers");
+const { V_Base } = require('../../../../src/state_manager/core');
 
 /*
  * txtCP ::Text Variable Example
