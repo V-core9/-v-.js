@@ -1,5 +1,5 @@
-const clickExec = (selector, callback) => {
-  document.querySelector(selector).addEventListener('click', callback);
+const clickExec = ( selector, callback ) => {
+  document.querySelector( selector ).addEventListener("click", callback );
 };
 
 module.exports = clickExec;

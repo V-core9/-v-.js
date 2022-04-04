@@ -1,7 +1,4 @@
-module.exports = {
-
-  clickExec: require('./clickExec'),
-
-  printButton: require('./print.button'),
-
+module.exports = helpers = {
+  clickExec: require("./clickExec"),
+  printButton: require("./print.button"),
 };

@@ -19,10 +19,10 @@ stateManager.vComponents = vComponents;
 /*
  ! Helpers like printter and clickExec
  */
-const { clickExec, printButton } = require("./helpers");
+const helpers = require("./helpers");
 
-stateManager.clickExec = clickExec;
-stateManager.printButton = printButton;
+stateManager.clickExec = helpers.clickExec;
+stateManager.printButton = helpers.printButton;
 
 /*
  ! EOF - 3RD ]

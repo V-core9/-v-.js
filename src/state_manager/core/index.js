@@ -1,37 +1,37 @@
 const vComponents = {
-  _list: [],
+  _list: {},
 
-  getAll: (getAllComponents = async () => {
+  getAll: async () => {
     return vComponents._list;
-  }),
+  },
 
-  get: (getComponent = async (id) => {
+  get: async (id) => {
     return vComponents._list[id] || null;
-  }),
+  },
 
-  add: (addComponent = async (vComponent) => {
+  add: async (vComponent) => {
     vComponents._list[vComponent.id] = vComponent;
-  }),
+  },
 
-  remove: (removeComponent = async (id) => {
+  remove: async (id) => {
     vComponents._list = vComponents._list.filter((v) => v.id !== id);
-  }),
+  },
 
-  update: (updateComponent = async (id, data) => {
-    vComponents.get(id).state(data);
-  }),
+  update: async (id, data) => {
+    await vComponents.get(id).state(data);
+  },
 
-  render: (render = async (id) => {
-    vComponents.get(id).view();
-  }),
+  render: async (id) => {
+    await vComponents.get(id).view();
+  },
 
-  init: startAction = async () => {
+  init: async () => {
     vComponents._list.forEach((v) => v.view());
   },
 
-  purge: (purge = async () => {
-    vComponents._list = [];
-  }),
+  purge: async () => {
+    vComponents._list = {};
+  },
 };
 
 class V_Base {
@@ -40,17 +40,16 @@ class V_Base {
 
     this.data = data.data || {};
 
+    this.meth = data.meth || {};
+
     this.view = data.view || (async () => console.log("Missing VIEW() Method"));
 
-    this.update =
-      data.update || (async () => console.log("Missing UPDATE() Method"));
+    this.update = data.update || (async () => console.log("Missing UPDATE() Method"));
 
     this.state = async (value) => {
       this.data = value;
       await this.update();
     };
-
-    this.methods = data.methods || {};
 
     vComponents.add(this);
   }

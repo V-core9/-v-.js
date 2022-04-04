@@ -12,6 +12,14 @@ module.exports = appD = new V_Base({
 
   data: 10,
 
+  
+  //! Methods that are runnable for this Component.
+  meth: {
+    increment: async () => appD.state(appD.data + 1),
+    decrement: async () => appD.state(appD.data - 1),
+    set4: async () => appD.state(44),
+  },
+
   view: async () => {
     return `<info>
               <h3>${appD.id}</h3>
@@ -27,10 +35,12 @@ module.exports = appD = new V_Base({
   update: async () => {
     document.querySelector(`#${appD.id}`).innerHTML = await appD.view();
 
-    clickExec("#" + appD.id + " .min", () => appD.state(-1111));
-    clickExec("#" + appD.id + " .inc", () => appD.state(appD.data + 1));
-    clickExec("#" + appD.id + " .dec", () => appD.state(appD.data - 1));
+    clickExec("#" + appD.id + " .min", appD.meth.set4);
+    clickExec("#" + appD.id + " .inc", appD.meth.increment);
+    clickExec("#" + appD.id + " .dec", appD.meth.decrement);
   },
 
 });
 
+
+module.exports = appD;

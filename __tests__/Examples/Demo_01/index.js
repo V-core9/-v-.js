@@ -1,8 +1,13 @@
-
 (async () => {
+  require("./components");
 
-  require('./components');
+  const { vComponents } = require("../../../src/state_manager");
 
-  (require('../../../src/state_management/core').vComponents.getAll()).forEach(async (item) => await item.update());
+  const listOfComponents = await vComponents.getAll();
 
+  console.log(listOfComponents);
+
+  const keyz = Object.keys(listOfComponents);
+
+  keyz.forEach(async (item) => await listOfComponents[item].update());
 })();

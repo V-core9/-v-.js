@@ -2,14 +2,18 @@ const stateManager = require("../../../src/state_manager/");
 const { V_Base, vComponents, printButton, clickExec } = stateManager;
 
 /*
+ * 1st Test Component Create/Utilization
  * txItem :: testExample_ITEM
  */
 const txItem = new V_Base({
-  // Just to be able to navigate it easier [id]
+  
+  //! Just to be able to navigate it easier [id]
   id: "testExample_ITEM",
 
+  //! Data that this component tracks.
   data: 225,
 
+  //! HTML/VIEW method.
   view: async () => {
     return `<info>
                     <h3>${txItem.id}</h3>
@@ -21,22 +25,34 @@ const txItem = new V_Base({
                 </actions>`;
   },
 
+  //! Methods that are runnable for this Component.
+  meth: {
+    increment: async () => txtItem.state(txtItem.data + 1),
+    decrement: async () => txtItem.state(txtItem.data - 1),
+  },
+
+  //! The General Update loop method.
   update: async () => {
     document.querySelector(`#${txItem.id}`).innerHTML = await txItem.view();
-    clickExec(`#${txItem.id} .inc`, () => txItem.state(txItem.data + 1));
-    clickExec(`#${txItem.id} .dec`, () => txItem.state(txItem.data - 1));
+    clickExec(`#${txItem.id} .inc`, txItem.meth.increment);
+    clickExec(`#${txItem.id} .dec`, txItem.meth.decrement);
   },
+
 });
+//! EOF >> 1st Component Utilization
 
 /*
+ * 2nd Component Utilization
  * txItemALT :: testExample_ITEM_ALT
  */
 const txItemALT = new V_Base({
-  // Just to be able to navigate it easier [id]
+  //! Just to be able to navigate it easier [id]
   id: "testExample_ITEM_ALT",
 
+  //! Data that this component tracks.
   data: 225,
 
+  //! HTML/VIEW method.
   view: async () => {
     return `<info>
                     <h3>${txItemALT.id}</h3>
@@ -48,18 +64,24 @@ const txItemALT = new V_Base({
                     </actions>`;
   },
 
+  //! Methods that are runnable for this Component.
+  meth: {
+    increment: async () => txItemALT.state(txItemALT.data + 1),
+    decrement: async () => txItemALT.state(txItemALT.data - 1),
+  },
+  
+  //! The General Update loop method.
   update: async () => {
-    document.querySelector(`#${txItemALT.id}`).innerHTML =
-      await txItemALT.view();
-    clickExec(`#${txItemALT.id} .inc`, () =>
-      txItemALT.state(txItemALT.data + 1)
-    );
-    clickExec(`#${txItemALT.id} .dec`, () =>
-      txItemALT.state(txItemALT.data - 1)
-    );
+    document.querySelector(`#${txItemALT.id}`).innerHTML = await txItemALT.view();
+    clickExec(`#${txItemALT.id} .inc`, txItemALT.meth.increment );
+    clickExec(`#${txItemALT.id} .dec`, txItemALT.meth.decrement );
   },
 });
 
+//! EOF >> 2nd Component Utilization
+
+
+//? ASYNC Run cuz some need to wait for things.
 (async () => {
   //! Test typeof so it should be an OBJECT
   test("checks typeof stateManager", () => {
@@ -100,5 +122,4 @@ const txItemALT = new V_Base({
     const itemData = await vComponents.get("testExample_ITEM_ALT");
     expect(itemData).toBe(txItemALT);
   });
-  
 })();
