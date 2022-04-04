@@ -1,11 +1,12 @@
+const { V_Base_Component } = require('../../../../src/state_manager');
+
 const { printButton, clickExec } = require("../../../../src/state_manager/helpers");
-const { V_Base } = require('../../../../src/state_manager/core');
 
 
 /*
  * SIC :: Sample_Item_Component_Base
  */
-module.exports = sic = new V_Base({
+module.exports = sic = new V_Base_Component({
 
   // Just to be able to navigate it easier [id]
   id: "Sample_Item_Component_Base",

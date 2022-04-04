@@ -9,11 +9,11 @@ const stateManager = {};
  */
 const core = require("./core");
 
-stateManager.V_Base = core.V_Base;
-stateManager.vComponents = core.vComponents;
+stateManager.V_Base_Component = core.V_Base;
+stateManager.v_components = core.v_components;
 
 /*
- ! EOF - 2ND ] 
+ ! EOF - 2ND ]
  */
 
 /*

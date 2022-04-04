@@ -1,14 +1,12 @@
-const {
-  printButton,
-  clickExec,
-} = require("../../../../src/state_manager/helpers");
-const { V_Base } = require("../../../../src/state_manager/core");
+const { V_Base_Component } = require("../../../../src/state_manager/");
+
+const { printButton,  clickExec, } = require("../../../../src/state_manager/helpers");
 
 /*
  * App2 :: Application V2
  */
 
-const App2 = new V_Base({
+const App2 = new V_Base_Component({
   //! Just to be able to navigate it easier [.id]
   id: "Application_Component_Base",
 
@@ -39,10 +37,10 @@ const App2 = new V_Base({
 
   update: async () => {
     document.querySelector(`#${App2.id}`).innerHTML = await App2.view();
-    clickExec(`#${App2.id} .set1`, App2.meth.set1);
-    clickExec(`#${App2.id} .set4`, App2.meth.set4);
-    clickExec(`#${App2.id} .inc`, App2.meth.increment);
-    clickExec(`#${App2.id} .dec`, App2.meth.decrement);
+    await clickExec(`#${App2.id} .set1`, App2.meth.set1);
+    await clickExec(`#${App2.id} .set4`, App2.meth.set4);
+    await clickExec(`#${App2.id} .inc`, App2.meth.increment);
+    await clickExec(`#${App2.id} .dec`, App2.meth.decrement);
   },
 });
 

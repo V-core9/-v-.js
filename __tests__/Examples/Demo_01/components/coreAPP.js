@@ -1,11 +1,12 @@
+const { V_Base_Component } = require('../../../../src/state_manager/');
+
 const { printButton, clickExec } = require("../../../../src/state_manager/helpers");
-const { V_Base } = require('../../../../src/state_manager/core');
 
 
 /*
  * coreAPP :: Sample Application Demo
  */
-module.exports = coreAPP = new V_Base({
+module.exports = coreAPP = new V_Base_Component({
 
   // Just to be able to navigate it easier [id]
   id: "CoreAppID",

@@ -1,15 +1,18 @@
+const { V_Base_Component } = require('../../../../src/state_manager');
+
 const { printButton, clickExec } = require("../../../../src/state_manager/helpers");
-const { V_Base } = require('../../../../src/state_manager/core');
 
 /*
  * txtCP ::Text Variable Example
  */
-const txtCP = new V_Base({
+const txtCP = new V_Base_Component({
 
   // Just to be able to navigate it easier [id]
   id: "Text_Component_Base",
 
+
   data: "Example String INIT Value.",
+
 
   view: async () => {
     return `<info>
@@ -23,13 +26,22 @@ const txtCP = new V_Base({
             </actions>`;
   },
 
+
+  meth: {
+    clearValue: () => txtCP.state(""),
+    xbc1: () => txtCP.state("XBC1"),
+    reset: () => txtCP.state("Example String INIT Value."),
+  },
+
+
   update: async () => {
     document.querySelector(`#${txtCP.id}`).innerHTML = await txtCP.view();
-    clickExec("#" + txtCP.id + " .clearValue", () => txtCP.state(""));
-    clickExec("#" + txtCP.id + " .setTo", () => txtCP.state("XBC1"));
-    clickExec("#" + txtCP.id + " .reset", () => txtCP.state("Example String INIT Value."));
+    clickExec("#" + txtCP.id + " .clearValue", txtCP.meth.clearValue );
+    clickExec("#" + txtCP.id + " .setTo", txtCP.meth.xbc1 );
+    clickExec("#" + txtCP.id + " .reset", txtCP.meth.reset );
   },
 
 });
+
 
 module.exports = txtCP;
