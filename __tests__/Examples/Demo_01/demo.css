@@ -37,12 +37,13 @@ h3 {
   display: block;
   overflow: hidden;
   background: #122941;
-  max-width: calc(50% - 2em);
   border: 4px solid #0d3258;
   outline: 1px solid black;
   box-shadow: 0 10px 10px -10px #000000;
   border-radius: 1em;
   user-select: none;
+  height: fit-content;
+  max-width: 100%;
 }
 
 #CoreAppID {
@@ -89,8 +90,7 @@ button:hover {
   align-items: center;
 }
 
-.baseElem h3,
-p {
+.baseElem h3, p {
   margin: 0;
 }
 
@@ -127,7 +127,7 @@ main {
 
 header {
   display: flex;
-  width: calc(100% - 0em);
+  width: calc(100% - 4em);
   /* font-size: 2em; */
   background: #0d3258;
   padding: 0.25em 1em;
@@ -170,4 +170,24 @@ header h1 {
   font-size: 2em;
   font-weight: boldest;
   font-family: ui-sans-serif sans-serif;
+}
+
+@media screen and (min-width: 769px) {
+  header {
+      width: calc(100% - 2.5em);
+  }
+
+  .baseElem {
+      max-width: calc(50% - 2em);
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  header {
+      width: 100% ;
+  }
+
+  .baseElem {
+      max-width: calc(50% - 1.075em);
+  }
 }

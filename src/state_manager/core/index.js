@@ -55,7 +55,7 @@ class V_Base {
   }
 }
 
-module.exports = {
+module.exports = core = {
   V_Base,
   vComponents,
 };

@@ -7,10 +7,10 @@ const stateManager = {};
  * 2nd Part of Main things
  * Hooking Classes and objects like -> V_BASE and vComponents
  */
-const { V_Base, vComponents } = require("./core");
+const core = require("./core");
 
-stateManager.V_Base = V_Base;
-stateManager.vComponents = vComponents;
+stateManager.V_Base = core.V_Base;
+stateManager.vComponents = core.vComponents;
 
 /*
  ! EOF - 2ND ] 
