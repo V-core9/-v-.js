@@ -32,18 +32,17 @@ h3 {
 }
 
 .baseElem {
-  margin: 0;
-  width: 100%;
-  display: block;
-  overflow: hidden;
+  display: flex;
   background: #122941;
-  border: 4px solid #0d3258;
   outline: 1px solid black;
   box-shadow: 0 10px 10px -10px #000000;
   border-radius: 1em;
   user-select: none;
+  gap: 1em;
+  flex-direction: column;
+  padding: 1em;
   height: fit-content;
-  max-width: 100%;
+  width: calc(50% - 3em);
 }
 
 body > v_app {
@@ -52,10 +51,10 @@ body > v_app {
   align-items: center;
   height: 100%;
   flex: 1;
-  border: 0.5em solid #142b42;
+  border: 0.5em solid #0f1c28;
   max-width: 1280px;
   min-height: 100vh;
-  box-shadow: 0 0 50px #08589f;
+  /* box-shadow: 0 0 50px #08589f; */
   border-top-width: 0;
   border-bottom-width: 0;
   outline: 1px solid black;
@@ -63,17 +62,16 @@ body > v_app {
 
 button {
   font-size: 1em;
-  margin: 0;
-  padding: 0.35em 1em;
-  border-radius: 1em;
-  border: none;
   outline: none;
   background: #113d64;
   color: white;
   cursor: pointer;
-  border: 1px solid #000;
-  /* flex: 1; */
-  box-shadow: 0 20px 20px -20px white;
+  line-height: 1em;
+  height: 100%;
+  border: 1px solid #005293;
+  box-shadow: 0 5px 10px -5px #061420;
+  white-space: nowrap;
+  padding: 0.5em 1em;
 }
 
 button:hover {
@@ -87,7 +85,9 @@ button:hover {
   display: flex;
   user-select: text;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
+  gap: 1em;
+  min-height: 2.5em;
 }
 
 .baseElem h3, p {
@@ -96,18 +96,15 @@ button:hover {
 
 .baseElem actions {
   display: flex;
-  gap: 0.25em;
-  padding: 0.5em;
+  gap: 1em;
   flex-flow: wrap;
-  justify-content: space-between;
-  box-shadow: 0 0 25px #00000050 inset;
-  outline: 4px solid #0d3258;
 }
 
 main {
   display: flex;
   gap: 1em;
   padding: 1em;
+  flex-direction: row;
   flex-wrap: wrap;
   flex: 1;
   justify-content: space-evenly;
@@ -115,18 +112,16 @@ main {
 }
 
 .baseElem info h3 {
-  white-space: nowrap;
-  padding: 0 1em 0 1em;
-  border-right: 1em solid #122941;
   overflow: hidden;
-  font-weight: 100;
   color: #fff;
   text-shadow: 0 0 2px black;
-  font-size: 12px;
+  align-items: center;
+  flex: 1;
+  border-radius: 1em;
+  text-align: end;
+  line-height: 1em;
   white-space: nowrap;
-  padding: 1em;
-  max-width: 30%;
-  width: 100%;
+  display: flex;
 }
 
 header {
@@ -145,26 +140,21 @@ header {
   z-index: 200;
 }
 
-.baseElem info h3.dataInfoPart {
-  width: 100%;
-  border: none;
-  border-left: 5px solid #0d3258;
-  border-right: 5px solid #0d3258;
-  background: #164a7a;
-  color: #b9e0ff;
-  white-space: pre-wrap;
-  text-shadow: 0 0 2.5px black;
-  font-size: 18px;
-  padding: .25em 1em;
+.baseElem info .dataInfoPart {
   box-shadow: 0 0 20px #0d3258 inset;
-  margin: .5em;
-  text-align: end;
-  max-width: 100%;
-  min-height: 1.5em;
-  line-height: 1em;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
+  align-content: center;
+  background: #164a7a;
+  text-shadow: 0 0 2px black;
+  border: 1px solid #05081c;
+  padding: .5em;
+  position: relative;
+}
+
+.baseElem info .dataInfoPart p {
+  flex: 1;
 }
 
 footer {
@@ -189,7 +179,7 @@ header h1 {
   }
 
   .baseElem {
-      max-width: calc(50% - 2em);
+      /* max-width: calc(50% - 2em); */
   }
 }
 
@@ -199,7 +189,7 @@ header h1 {
   }
 
   .baseElem {
-      max-width: calc(50% - 1.075em);
+      /* max-width: calc(50% - 1.075em); */
   }
 }
 
@@ -215,4 +205,21 @@ input {
   outline: none;
   padding: 0.5em 1em;
   border-radius: 1em;
+}
+
+.dataInfoPart button.reset {
+  background: #ff00003b;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: .5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+actions > * {
+  /* flex: 1; */
+  display: flex;
+  overflow: hidden;
 }
