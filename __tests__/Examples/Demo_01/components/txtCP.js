@@ -1,6 +1,6 @@
-const { V_Base_Component } = require('../../../../src/state_manager');
+const { V_Base_Component, helpers } = require("../../../../src/state_manager/");
+const { printButton,  clickExec, } = helpers;
 
-const { printButton, clickExec } = require("../../../../src/state_manager/helpers");
 
 /*
  * txtCP ::Text Variable Example
