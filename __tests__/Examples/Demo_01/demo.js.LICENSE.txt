@@ -1,7 +1,1 @@
-//! Just to be able to navigate it easier [.id]
-
 //! Methods that are runnable for this Component.
-
-//! Some Example Value to Play With [.data]
-
-//! This is where we actually render HTML that will be printed. [.view()]

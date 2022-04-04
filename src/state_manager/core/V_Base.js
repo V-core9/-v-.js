@@ -1,24 +1,30 @@
 const v_components = require('./v_components');
 
-module.exports = function V_Base(data = {}) {
 
-  this.id = data.id || "app";
+module.exports = class V_Base {
 
-  this.data = data.data || {};
+  constructor(data) {
 
-  this.meth = data.meth || {};
+    this.id = data.id || "v_app";
 
-  this.view = data.view || (async () => console.log("Missing VIEW() Method"));
+    this.data = data.data || {};
 
-  this.update = data.update || (async () => console.log("Missing UPDATE() Method"));
+    this.meth = data.meth || {};
 
-  this.state = async (value) => {
-    this.data = value;
-    await this.update();
-  };
+    this.view = data.view || (async () => console.log("Missing VIEW() Method"));
 
-  this.type = async () => (this.constructor.name || null);
+    this.update = data.update || (async () => console.log("Missing UPDATE() Method"));
 
-  v_components.add(this);
+    this.state = async (value) => {
+      this.data = value;
+      await this.update();
+    };
+
+    this.type = async () => (this.constructor.name || null);
+
+    v_components.add(this);
+
+    return this;
+  }
 
 };
