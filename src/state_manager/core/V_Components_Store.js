@@ -17,7 +17,7 @@ module.exports = function V_Components_Store(data = {}) {
 
 
   this.add = async (vComponent) => {
-    if (["V_Base", "V_Base_Component"].indexOf(vComponent.type()) === -1) {
+    if (["V_Base", "V_Base"].indexOf(vComponent.type()) === -1) {
       this._list[vComponent.id] = vComponent;
     } else {
       throw new Error(vcsErrors.notInstance());

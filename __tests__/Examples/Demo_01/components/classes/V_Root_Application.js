@@ -1,7 +1,7 @@
-const { v_components, V_Base_Component } = require("../../../../../src/state_manager");
+const { v_components, V_Base } = require("../../../../../src/state_manager");
 const { initView, render } = v_components;
 
-module.exports = class V_Root_Application extends V_Base_Component {
+module.exports = class V_Root_Application extends V_Base {
 
   constructor(props = {}) {
 

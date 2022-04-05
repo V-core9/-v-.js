@@ -11,6 +11,8 @@ module.exports = class V_Base {
 
     this.meth = data.meth || {};
 
+    this.type = async () => (this.constructor.name || null);
+
     this.view = data.view || (async () => console.log("Missing VIEW() Method"));
 
     this.update = data.update || (async () => console.log("Missing UPDATE() Method"));
@@ -19,8 +21,6 @@ module.exports = class V_Base {
       this.data = value;
       await this.update();
     };
-
-    this.type = async () => (this.constructor.name || null);
 
     this.initView = async () => {
       return `<base_elem id="${this.id}"></base_elem>`;

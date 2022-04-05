@@ -34,16 +34,16 @@ h3 {
 base_elem {
   display: flex;
   background: #14273a;
-  outline: 1px solid black;
-  box-shadow: 0 10px 10px -10px #03a9f4;
-  border-radius: 1em;
+  outline: 1px solid #0b1723;
+  
+  
   user-select: none;
-  gap: 1em;
+  /* gap: 1em; */
   flex-direction: column;
-  padding: 1em;
-  height: fit-content;
-  width: calc(50% - 3em);
-}
+  /* padding: 1em; */
+  
+  width: calc( 50% - 3em );
+opacity: .6;}
 
 body > v_app {
   display: flex;
@@ -51,24 +51,26 @@ body > v_app {
   flex: 1;
   max-width: 100%;
   outline: 1px solid black;
-}
+/* gap: 1em; */}
 
 button {
   font-size: 1em;
   background: #113d64;
   color: white;
   cursor: pointer;
-  border: 2px solid #005293;
-  box-shadow: 0 5px 10px -5px #061420;
+  border: 3px solid #113d64;
+  outline: 1px solid #0b1724;box-shadow: 0 5px 10px -5px #061420;
   align-items: center;
   justify-content: center;
-}
+  font-style: normal;
+  height: 100%;
+white-space: nowrap;align-items: baseline;justify-content: flex-start;}
 
 button:hover {
   transform: scale(1.05);
   transition: 0.35s cubic-bezier(0.86, 0.09, 0, 0.8) all;
-  border-color: #102030;
-  box-shadow: 0 10px 20px -10px #000102;
+  border-color: #16406a;
+  box-shadow: 0 10px 20px -10px #1563a1;
 }
 
 base_elem info {
@@ -77,8 +79,8 @@ base_elem info {
   flex-direction: row;
   align-items: stretch;
   gap: 1em;
-  min-height: 2.5em;
-}
+  
+padding: 1em;background: #00000040;}
 
 base_elem h3, p {
   margin: 0;
@@ -88,20 +90,20 @@ base_elem actions {
   display: flex;
   gap: 1em;
   flex-direction: row;
-}
+justify-content: flex-end;padding: .5em .5em;}
 
 main {
   display: flex;
-  gap: 1em;
-  padding: 2em;
+  gap: 2.5em;
+  padding: 0;
   flex-direction: row;
   flex-wrap: wrap;
   flex: 1;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-content: flex-start;
-  max-width: 1600px;
+  max-width: 1280px;
   margin: 0 auto;
-}
+background: #00000033;/* border-radius: 2em; */padding: 2em;/* outline: 1px solid #0b1825; *//* box-shadow: -10px -10px 40px 0px #0b1724 inset; */}
 
 base_elem info h3 {
   overflow: hidden;
@@ -109,22 +111,25 @@ base_elem info h3 {
   text-shadow: 0 0 2px black;
   align-items: center;
   flex: 1;
-  border-radius: 1em;
+  
   text-align: end;
-  line-height: 1em;
+  line-height: 1.5em;
   white-space: nowrap;
   display: flex;
 }
 
-header {
+v_app > header {
   display: flex;
-  width: auto;
-  padding: 1em;
-  margin: 0;
-  background: #16426e;
+  
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  
+  background: #00000085;
+  gap: 1em;
   z-index: 200;
-  box-shadow: 0 5px 30px -15px black;
-}
+  outline: 1px solid #005293;box-shadow: 0 5px 30px -15px black;
+align-self: center;width: 100%;}
 
 base_elem info .dataInfoPart {
   box-shadow: 0 0 20px #0d3258 inset;
@@ -135,7 +140,7 @@ base_elem info .dataInfoPart {
   background: #164a7a;
   text-shadow: 0 0 2px black;
   border: 1px solid #05081c;
-  padding: .5em;
+  padding: 0 1em 0 0;
   position: relative;
 }
 
@@ -145,11 +150,11 @@ base_elem info .dataInfoPart p {
 
 footer {
   width: auto;
-  background: #154776;
+  background: #0b1825;
   justify-content: center;
   align-items: center;
   padding: 0.25em 1em;
-  border-top: 10px dashed #16426e;
+  border-top: 10px dashed #14273a;
   outline: 1px solid black;
   z-index: 200;
   box-shadow: 0 0 30px -15px black;
@@ -195,8 +200,8 @@ input {
   text-shadow: none;
   border: none;
   outline: none;
-  padding: 0.5em 1em;
-  border-radius: 1em;
+  flex: 1;padding: 0.5em 1em;
+  /* border-radius: 1em; */
 }
 
 .dataInfoPart button.reset {
@@ -215,5 +220,89 @@ actions > * {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  border-radius: 2em;
+  /* border-radius: 1em; */
+}
+
+actions > button > i, actions > button > p {
+  user-select: none;
+  font-style: normal;
+  font-weight: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height: 1em;
+  padding: 0 1em;text-shadow: 0 0 2px black;
+  
+white-space: nowrap;}
+
+actions button > i {
+  padding: .65em 1em;
+  background: #005293;
+}
+
+actions > button {
+  padding: 0;
+  gap: 0;
+}
+
+v_app > header > * {
+  flex: 1;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+v_app > header > actions {
+  flex-direction: row;
+  justify-content: flex-end;
+  height: fit-content;
+  padding: .5em 2em;
+}
+
+v_app > header > actions > button {
+  height: auto;
+box-shadow: 0 5px 10px -5px #204060;outline: 1px solid #2196f3;}
+
+v_app > header > info >h2 {
+  margin: 0;
+}
+
+v_app > header > info p {
+  margin: 0;
+  text-shadow: none;
+  color: #2196f3;
+}
+
+v_app > header > info {
+  padding: .85em 2em;
+  gap: 0;
+}
+
+v_app > header > info h2 {
+  font-size: 2.25em;
+  font-weight: 800;
+  line-height: 1em;
+  font-family: serif;
+}
+
+actions > button[action="reset"], button[action="reset"] {
+  border: none;
+  background: #ff000033;
+}
+
+
+
+
+actions button[action="reset"] > i {
+    background: #ff000030;
+}
+
+actions button[action="reset"] {
+    border: 2px solid #431f2e;
+}
+
+base_elem:hover {
+    opacity: 1;
 }

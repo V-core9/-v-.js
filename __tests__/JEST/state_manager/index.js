@@ -1,10 +1,10 @@
 const stateManager = require("../../../src/state_manager/");
-const { V_Base_Component, v_components, printButton, clickExec } = stateManager;
+const { V_Base, v_components, printButton, clickExec } = stateManager;
 
 /*
  * Test Components Create
  */
-const txItem = new V_Base_Component({
+const txItem = new V_Base({
 
   //! Just to be able to navigate it easier [id]
   id: "testExample_ITEM",
@@ -19,8 +19,8 @@ const txItem = new V_Base_Component({
                     <h3 class="dataInfoPart">${txItem.data}</h3>
                 </info>
                 <actions>
-                    ${await printButton("🔼 Increment", "inc")}
-                    ${await printButton("🔻 Decrement", "dec")}
+                    ${await printButton({ icon: '🔼', text: 'Increment', action: "inc" })}
+                    ${await printButton({ icon: '🔻', text: 'Decrement', action: "dec" })}
                 </actions>`;
   },
 
@@ -39,7 +39,7 @@ const txItem = new V_Base_Component({
 
 });
 
-const txItemALT = new V_Base_Component({
+const txItemALT = new V_Base({
   //! Just to be able to navigate it easier [id]
   id: "testExample_ITEM_ALT",
 
@@ -49,13 +49,13 @@ const txItemALT = new V_Base_Component({
   //! HTML/VIEW method.
   view: async () => {
     return `<info>
-                    <h3>${txItemALT.id}</h3>
-                    <h3 class="dataInfoPart">${txItemALT.data}</h3>
-                    </info>
-                    <actions>
-                    ${await printButton("🔼 Increment", "inc")}
-                    ${await printButton("🔻 Decrement", "dec")}
-                    </actions>`;
+              <h3>${txItemALT.id}</h3>
+              <h3 class="dataInfoPart">${txItemALT.data}</h3>
+            </info>
+            <actions>
+              ${await printButton({ icon: '🔼', text: 'Increment', action: "inc" })}
+              ${await printButton({ icon: '🔻', text: 'Decrement', action: "dec" })}
+            </actions>`;
   },
 
   //! Methods that are runnable for this Component.
@@ -90,9 +90,9 @@ const txItemALT = new V_Base_Component({
     );
   });
 
-  //! Test typeof V_Base_Component so it should be an FUNCTION
-  test("checks typeof V_Base_Component Class/function", async () => {
-    expect(typeof V_Base_Component).toBe("function");
+  //! Test typeof V_Base so it should be an FUNCTION
+  test("checks typeof V_Base Class/function", async () => {
+    expect(typeof V_Base).toBe("function");
   });
 
   //! Test typeof v_components so it should be an OBJECT

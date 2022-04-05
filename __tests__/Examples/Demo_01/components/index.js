@@ -7,7 +7,7 @@ module.exports = components = {
   v_app: new V_Root_Application({ id: "v_app" }),
 
 
-  appHeader: new V_App_Header({ id: "V_AppHeader01" }),
+  appHeader: new V_App_Header({ id: "V_AppHeader01", data: { title: "🚀 V_State_Manager" } }),
   appFooter: new V_App_Footer({ id: "V_AppFooter01" }),
 
 

@@ -1,8 +1,8 @@
-const { V_Base_Component, helpers } = require("../../../../../src/state_manager");
+const { V_Base, helpers } = require("../../../../../src/state_manager");
 const { printButton, clickExec } = helpers;
 
 
-module.exports = class Counter_Demo extends V_Base_Component {
+module.exports = class Counter_Demo extends V_Base {
   constructor(props) {
 
     props.id = props.id || "Counter_Demo";
@@ -22,16 +22,14 @@ module.exports = class Counter_Demo extends V_Base_Component {
 
       return `<info>
                 <h3 class="comp_id">➿ ID:\n <span>${this.id}</span></h3>
-
                 <h3 class="dataInfoPart">
-                  ${(this.data != this.default) ? await printButton('❌', "reset") : ""}
+                  ${(this.data != this.default) ? await printButton({icon:'❌', action: 'reset'}) : ""}
                   <p>${this.data}</p>
                 </h3>
-
               </info>
               <actions>
-                ${await printButton('🔼 Increment', "inc")}
-                ${await printButton('🔻 Decrement', "dec")}
+                ${await printButton({ icon: '🔼', text: 'Increment', action: "inc" })}
+                ${await printButton({ icon: '🔻', text: 'Decrement', action: "dec" })}
               </actions>`;
     };
 
@@ -40,10 +38,10 @@ module.exports = class Counter_Demo extends V_Base_Component {
 
       document.querySelector(`#${this.id}`).innerHTML = await this.view();
 
-      if (this.data != this.default) clickExec(`#${this.id} .reset`, this.meth.reset);
+      if (this.data != this.default) clickExec(`#${this.id} [action="reset"]`, this.meth.reset);
 
-      clickExec(`#${this.id} .inc`, this.meth.increment);
-      clickExec(`#${this.id} .dec`, this.meth.decrement);
+      clickExec(`#${this.id} [action="inc"]`, this.meth.increment);
+      clickExec(`#${this.id} [action="dec"]`, this.meth.decrement);
 
     };
 
