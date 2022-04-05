@@ -22,6 +22,10 @@ module.exports = class V_Base {
 
     this.type = async () => (this.constructor.name || null);
 
+    this.initView = async () => {
+      return `<base_elem id="${this.id}"></base_elem>`;
+    };
+
     v_components.add(this);
 
     return this;

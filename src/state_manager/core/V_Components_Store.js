@@ -52,9 +52,6 @@ module.exports = function V_Components_Store(data = {}) {
   };
 
 
-  this.init = async () => {
-    this._list.forEach((v) => v.view());
-  };
 
 
   this.type = async () => {
@@ -78,6 +75,10 @@ module.exports = function V_Components_Store(data = {}) {
       await this._list[compNames[i]].update();
     }
 
+  };
+
+  this.initView = async (compName) => {
+    return await this._list[compName].initView() || false;
   };
 
   return this;

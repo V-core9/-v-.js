@@ -25,7 +25,7 @@ module.exports = class Text_Input_Demo extends V_Base_Component {
 
     this.view = async () => {
 
-      let btnInfo =  await printButton((this.default == '') ? '❌ Clear Input' : '🌀 Reset [' + this.default + ']', "reset");
+      let btnInfo = await printButton((this.default == '') ? '❌ Clear Input' : '🌀 Reset [' + this.default + ']', "reset");
 
       return `<info>
                 <h3 class="comp_id">➿ ID:\n <span>${this.id}</span></h3>
@@ -47,6 +47,8 @@ module.exports = class Text_Input_Demo extends V_Base_Component {
       document.querySelector(`#${this.id} [name="userInput"]`).addEventListener('change', this.meth.change);
 
     };
+
+
 
   }
 

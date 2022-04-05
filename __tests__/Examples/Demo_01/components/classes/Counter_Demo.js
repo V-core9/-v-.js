@@ -35,6 +35,7 @@ module.exports = class Counter_Demo extends V_Base_Component {
               </actions>`;
     };
 
+
     this.update = async () => {
 
       document.querySelector(`#${this.id}`).innerHTML = await this.view();
@@ -45,6 +46,7 @@ module.exports = class Counter_Demo extends V_Base_Component {
       clickExec(`#${this.id} .dec`, this.meth.decrement);
 
     };
+
 
   }
 

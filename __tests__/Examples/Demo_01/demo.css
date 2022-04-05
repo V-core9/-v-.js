@@ -31,11 +31,11 @@ h3 {
   text-shadow: 0 0 2.5 black;
 }
 
-.baseElem {
+base_elem {
   display: flex;
-  background: #122941;
+  background: #14273a;
   outline: 1px solid black;
-  box-shadow: 0 10px 10px -10px #000000;
+  box-shadow: 0 10px 10px -10px #03a9f4;
   border-radius: 1em;
   user-select: none;
   gap: 1em;
@@ -48,30 +48,20 @@ h3 {
 body > v_app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  height: 100%;
   flex: 1;
-  border: 0.5em solid #0f1c28;
-  max-width: 1280px;
-  min-height: 100vh;
-  /* box-shadow: 0 0 50px #08589f; */
-  border-top-width: 0;
-  border-bottom-width: 0;
+  max-width: 100%;
   outline: 1px solid black;
 }
 
 button {
   font-size: 1em;
-  outline: none;
   background: #113d64;
   color: white;
   cursor: pointer;
-  line-height: 1em;
-  height: 100%;
-  border: 1px solid #005293;
+  border: 2px solid #005293;
   box-shadow: 0 5px 10px -5px #061420;
-  white-space: nowrap;
-  padding: 0.5em 1em;
+  align-items: center;
+  justify-content: center;
 }
 
 button:hover {
@@ -81,7 +71,7 @@ button:hover {
   box-shadow: 0 10px 20px -10px #000102;
 }
 
-.baseElem info {
+base_elem info {
   display: flex;
   user-select: text;
   flex-direction: row;
@@ -90,28 +80,30 @@ button:hover {
   min-height: 2.5em;
 }
 
-.baseElem h3, p {
+base_elem h3, p {
   margin: 0;
 }
 
-.baseElem actions {
+base_elem actions {
   display: flex;
   gap: 1em;
-  flex-flow: wrap;
+  flex-direction: row;
 }
 
 main {
   display: flex;
   gap: 1em;
-  padding: 1em;
+  padding: 2em;
   flex-direction: row;
   flex-wrap: wrap;
   flex: 1;
   justify-content: space-evenly;
   align-content: flex-start;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-.baseElem info h3 {
+base_elem info h3 {
   overflow: hidden;
   color: #fff;
   text-shadow: 0 0 2px black;
@@ -126,21 +118,15 @@ main {
 
 header {
   display: flex;
-  width: calc(100% - 4em);
-  /* font-size: 2em; */
-  background: #0d3258;
-  padding: 0.25em 1em;
-  border-radius: 2em;
-  border: 3px #0f2438 double;
-  margin: 0.5em 0;
-  /* box-shadow: 0 0 20px 0 #00000070 inset; */
-  border-right: 7.5px solid #0f2438;
-  border-left: 7.5px solid #0f2438;
-  outline: 1px solid #000000;
+  width: auto;
+  padding: 1em;
+  margin: 0;
+  background: #16426e;
   z-index: 200;
+  box-shadow: 0 5px 30px -15px black;
 }
 
-.baseElem info .dataInfoPart {
+base_elem info .dataInfoPart {
   box-shadow: 0 0 20px #0d3258 inset;
   align-items: center;
   justify-content: flex-end;
@@ -153,47 +139,53 @@ header {
   position: relative;
 }
 
-.baseElem info .dataInfoPart p {
+base_elem info .dataInfoPart p {
   flex: 1;
 }
 
 footer {
-  width: calc(100% - 1em);
-  background: #132b42;
-  color: #0085ff;
+  width: auto;
+  background: #154776;
   justify-content: center;
   align-items: center;
   padding: 0.25em 1em;
-  border-top: 5px dashed #041a30;
+  border-top: 10px dashed #16426e;
+  outline: 1px solid black;
+  z-index: 200;
+  box-shadow: 0 0 30px -15px black;
 }
 
 header h1 {
   font-size: 2em;
-  font-weight: boldest;
-  font-family: ui-sans-serif sans-serif;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 1em;
+  background: #154776;
+  flex: 1;
+  margin: 0;
 }
 
 @media screen and (min-width: 769px) {
   header {
-      width: calc(100% - 2.5em);
+      /* width: calc(100% - 2.5em); */
   }
 
-  .baseElem {
+  base_elem {
       /* max-width: calc(50% - 2em); */
   }
 }
 
 @media screen and (min-width: 1281px) {
   header {
-      width: 100%;
+      /* width: 100%; */
   }
 
-  .baseElem {
+  base_elem {
       /* max-width: calc(50% - 1.075em); */
   }
 }
 
-.baseElem info h3.comp_id span {
+base_elem info h3.comp_id span {
   color: #b3dbf2;
   font-size: 9px;
 }
@@ -221,5 +213,7 @@ input {
 actions > * {
   /* flex: 1; */
   display: flex;
+  flex-direction: row;
   overflow: hidden;
+  border-radius: 2em;
 }
