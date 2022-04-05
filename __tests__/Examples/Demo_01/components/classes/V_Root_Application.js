@@ -28,6 +28,7 @@ module.exports = class V_Root_Application extends V_Base_Component {
       return `<header>
                 <h1>📦 State Management </h1>
               </header>
+
               <main>
                 <div id="number_demo_elem" class="baseElem"></div>
                 <div id="Application_Component_Base" class="baseElem"></div>
@@ -37,6 +38,7 @@ module.exports = class V_Root_Application extends V_Base_Component {
                 <div id="ANA_EXAMPLE" class="baseElem"></div>
                 <div id="more_things_to_mess" class="baseElem"></div>
               </main>
+
               <footer>
                 <p>Page Focus:  ${(this.data === true) ? "🟢 TRUE" : " 🔻 FALSE"}</p>
               </footer>`;
