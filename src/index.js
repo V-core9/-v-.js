@@ -14,5 +14,4 @@ const _V_ = {
 
 if (process.env.NODE_ENV !== 'production') console.log(_V_);
 
-
 module.exports = _V_;

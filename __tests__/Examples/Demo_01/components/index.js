@@ -1,5 +1,5 @@
 
-const { V_Root_Application, Counter_Demo, Text_Input_Demo, V_App_Footer, V_App_Header } = require("./classes/");
+const { V_Root_Application, Counter_Demo, Text_Input_Demo, App_Footer, App_Header, App_Navigation, App_InfoBlock } = require("./classes/");
 
 
 module.exports = components = {
@@ -7,8 +7,13 @@ module.exports = components = {
   v_app: new V_Root_Application({ id: "v_app" }),
 
 
-  appHeader: new V_App_Header({ id: "V_AppHeader01", data: { title: "🚀 V_State_Manager" } }),
-  appFooter: new V_App_Footer({ id: "V_AppFooter01" }),
+  appHeader: new App_Header({ id: "V_AppHeader01", }),
+
+  appHeadInfoBlock: new App_InfoBlock({ id: "appHeadInfoBlock", title: "🚀 Vc9 - State_Manager", description: "Some Random Text to Fill in the space." }),
+
+  appFooter: new App_Footer({ id: "V_AppFooter01" }),
+
+  appNavigation: new App_Navigation({ id: "mainHeadNav01" }),
 
 
   number_demo_elem: new Counter_Demo({ id: "number_demo_elem", data: 50, default: 0 }),

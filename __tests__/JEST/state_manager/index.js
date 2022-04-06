@@ -1,5 +1,5 @@
 const stateManager = require("../../../src/state_manager/");
-const { V_Base, v_components, printButton, clickExec } = stateManager;
+const { V_Base, vStore, printButton, clickExec } = stateManager;
 
 /*
  * Test Components Create
@@ -95,26 +95,26 @@ const txItemALT = new V_Base({
     expect(typeof V_Base).toBe("function");
   });
 
-  //! Test typeof v_components so it should be an OBJECT
-  test("checks typeof v_components Object", async () => {
-    expect(typeof v_components).toBe("object");
+  //! Test typeof vStore so it should be an OBJECT
+  test("checks typeof vStore Object", async () => {
+    expect(typeof vStore).toBe("object");
   });
 
   //! Test Items Count
   test("test for 2 components that this file creates", async () => {
-    const compCount = Object.keys(await v_components.getAll()).length || false;
+    const compCount = Object.keys(await vStore.getAll()).length || false;
     expect(compCount).toBe(2);
   });
 
   //! Test FInding a Specific
   test("Look for a specif item using it's ID. [ testExample_ITEM ]", async () => {
-    const itemData = await v_components.get("testExample_ITEM");
+    const itemData = await vStore.get("testExample_ITEM");
     expect(itemData).toBe(txItem);
   });
 
   //! Test FInding a Specific_ALT Version
   test("Look for a specif item using it's ID [ testExample_ITEM_ALT ]", async () => {
-    const itemData = await v_components.get("testExample_ITEM_ALT");
+    const itemData = await vStore.get("testExample_ITEM_ALT");
     expect(itemData).toBe(txItemALT);
   });
 

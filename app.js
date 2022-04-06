@@ -1,5 +1,4 @@
 
-
 process.env.NODE_ENV = process.env.NODE_ENV || 'production';
 
 const isDev = async () => (process.env.NODE_ENV.toLowerCase() === 'development');

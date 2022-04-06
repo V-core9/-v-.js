@@ -52,8 +52,6 @@ module.exports = function V_Components_Store(data = {}) {
   };
 
 
-
-
   this.type = async () => {
     return this.constructor.name;
   };
@@ -78,7 +76,7 @@ module.exports = function V_Components_Store(data = {}) {
   };
 
   this.initView = async (compName) => {
-    return await this._list[compName].initView() || false;
+    return await this._list[compName].init() || false;
   };
 
   return this;

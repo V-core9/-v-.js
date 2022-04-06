@@ -1,16 +1,16 @@
-const { v_components } = require('../../../src/state_manager');
+const { vStore } = require('../../../src/state_manager');
 
 /*
  * Test Run / FlyTry
  */
 (async () => {
 
-  test("typeof v_components -> V_Components_Store", async () => {
-    expect(typeof v_components).toBe("object");
+  test("typeof vStore -> V_Components_Store", async () => {
+    expect(typeof vStore).toBe("object");
   });
 
-  test("v_components.type() -> V_Components_Store", async () => {
-    expect(await v_components.type()).toBe("V_Components_Store");
+  test("vStore.type() -> V_Components_Store", async () => {
+    expect(await vStore.type()).toBe("V_Components_Store");
   });
 
 })();

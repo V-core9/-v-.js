@@ -1,6 +1,6 @@
-const { v_components, V_Base } = require("../../../../../src/state_manager");
+const { V_Base } = require("../../../../../src/state_manager");
 
-module.exports = class V_App_Footer extends V_Base {
+module.exports = class App_Footer extends V_Base {
 
   constructor(props = {}) {
 
@@ -31,11 +31,6 @@ module.exports = class V_App_Footer extends V_Base {
 
     this.update = async () => {
       document.querySelector(`#${this.id}`).innerHTML = await this.view();
-    };
-
-
-    this.initView = async () =>{
-      return `<footer id="${this.id}" ></footer>`;
     };
 
     window.addEventListener('blur', this.meth.blur);

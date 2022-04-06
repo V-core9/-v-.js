@@ -21,13 +21,17 @@ module.exports = class Counter_Demo extends V_Base {
     this.view = async () => {
 
       return `<info>
-                <h3 class="comp_id">➿ ID:\n <span>${this.id}</span></h3>
+                <h3 class="comp_id">
+                  <p>➿ ID : <span>${this.id}</span></p>
+                  <p>📦 Class : <span>${await this.type()}</span></p>
+                </h3>
                 <h3 class="dataInfoPart">
-                  ${(this.data != this.default) ? await printButton({icon:'❌', action: 'reset'}) : ""}
+                  ${(this.data != this.default) ? await printButton({ icon: '❌', action: 'reset' }) : ""}
                   <p>${this.data}</p>
                 </h3>
               </info>
               <actions>
+
                 ${await printButton({ icon: '🔼', text: 'Increment', action: "inc" })}
                 ${await printButton({ icon: '🔻', text: 'Decrement', action: "dec" })}
               </actions>`;
