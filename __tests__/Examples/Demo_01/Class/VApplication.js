@@ -1,13 +1,9 @@
-const { vStore, V_Base } = require("../../../../../src/").stateManager;
+const { vStore, V_Base } = require("../../../../src").stateManager;
 const { initView } = vStore;
 
-module.exports = class V_Root_Application extends V_Base {
+module.exports = class VApplication extends V_Base {
 
   constructor(props = {}) {
-
-    // Just to be able to navigate it easier [id]
-    props.id = props.id || "v_app";
-    props.data = props.data || {};
 
     super(props);
 
@@ -32,6 +28,7 @@ module.exports = class V_Root_Application extends V_Base {
                     ${await initView('its_over_9000')}
                     ${await initView('ANA_EXAMPLE')}
                     ${await initView('txtCP')}
+                    ${await initView('emptyValTest')}
                     ${await initView('more_things_to_mess')}`;
 
       await this.update();

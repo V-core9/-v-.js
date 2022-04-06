@@ -1,12 +1,9 @@
-const { V_Base, helpers } = require("../../../../../src/state_manager");
+const { V_Base, helpers } = require("../../../../src/state_manager");
 const { printButton, clickExec } = helpers;
 
 
 module.exports = class Counter_Demo extends V_Base {
   constructor(props) {
-
-    props.id = props.id || "Counter_Demo";
-    props.data = props.data || null;
 
     super(props);
 

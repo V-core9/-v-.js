@@ -1,14 +1,14 @@
 module.exports = {
 
-  V_Root_Application: require('./V_Root_Application'),
+  VApplication: require('./VApplication'),
 
   App_Footer: require('./App_Footer'),
   App_Header: require('./App_Header'),
-  App_InfoBlock: require('./App_InfoBlock'),
+  Info_Block: require('./Info_Block'),
 
   App_Navigation: require('./App_Navigation'),
 
   Counter_Demo: require('./Counter_Demo'),
-  Text_Input_Demo: require('./Text_Input_Demo'),
+  Input_Text: require('./Input_Text'),
 
 };

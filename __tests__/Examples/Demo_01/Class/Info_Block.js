@@ -1,18 +1,14 @@
-const { V_Base, helpers, vStore } = require("../../../../../src/state_manager");
+const { V_Base, helpers, vStore } = require("../../../../src/state_manager");
 const { initView } = vStore;
 
-module.exports = class App_InfoBlock extends V_Base {
+module.exports = class Info_Block extends V_Base {
 
   constructor(props = {}) {
 
-    // Just to be able to navigate it easier [id]
-    props.id = props.id || "V_App_InfoBlock";
-    props.data = props.data || false;
-
     super(props);
 
-    this.title = props.title || "Missing App_InfoBlock Title";
-    this.description = props.description || "Missing App_InfoBlock Description";
+    this.title = props.title || "Missing Info_Block Title";
+    this.description = props.description || "Missing Info_Block Description";
 
     this.meth = {
       showInfo: async () => this.state(true),

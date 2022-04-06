@@ -1,14 +1,12 @@
-const { V_Base, helpers } = require("../../../../../src/state_manager");
+const { V_Base, helpers } = require("../../../../src/state_manager");
 const { printButton, clickExec } = helpers;
 
 
-module.exports = class Text_Input_Demo extends V_Base {
+module.exports = class Input_Text extends V_Base {
   constructor(props) {
 
-    props.id = props.id || "Text_Input_Demo";
-    props.data = props.data || null;
-
     super(props);
+
 
     this.default = props.default || '';
 
@@ -28,6 +26,7 @@ module.exports = class Text_Input_Demo extends V_Base {
 
     };
 
+
     this.view = async () => {
 
       let btnTempInfo = (this.default == '') ? { icon: '❌', text: 'Clear', action: "reset" } : { icon: '🌀', text: 'Reset [' + this.default + ']', action: "reset" };
@@ -46,6 +45,7 @@ module.exports = class Text_Input_Demo extends V_Base {
                 ${(this.data != this.default) ? btnInfo : ''}
               </actions>`;
     };
+
 
     this.addEvents = async () => {
 

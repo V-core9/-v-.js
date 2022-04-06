@@ -1,3 +1,3 @@
-const { v_app } = require("./components");
+const { vApp } = require("./components");
 
-v_app.run();
+vApp.run();

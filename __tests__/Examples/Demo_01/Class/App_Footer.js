@@ -1,12 +1,11 @@
-const { V_Base } = require("../../../../../src/state_manager");
+const { V_Base } = require("../../../../src/state_manager");
+
 
 module.exports = class App_Footer extends V_Base {
 
+
   constructor(props = {}) {
 
-    // Just to be able to navigate it easier [id]
-    props.id = props.id || "V_App_Footer";
-    props.data = props.data || true;
 
     super(props);
 
@@ -33,10 +32,14 @@ module.exports = class App_Footer extends V_Base {
       document.querySelector(`#${this.id}`).innerHTML = await this.view();
     };
 
-    window.addEventListener('blur', this.meth.blur);
-    window.addEventListener('focus', this.meth.focus);
-    window.addEventListener('load', this.meth[(document.hasFocus()) ? "focus" : "blur"]);
 
+    this.events = async () => {
+      window.addEventListener('blur', this.meth.blur);
+      window.addEventListener('focus', this.meth.focus);
+      window.addEventListener('load', this.meth[(document.hasFocus()) ? "focus" : "blur"]);
+    };
+
+    this.events();
 
   }
 

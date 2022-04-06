@@ -33,7 +33,7 @@ h3 {
   text-shadow: 0 0 2.5 black;
 }
 
-counter_demo, text_input_demo {
+counter_demo, input_text {
   display: flex;
   background: #14273a;
   outline: 1px solid #0b1723;
@@ -44,7 +44,7 @@ counter_demo, text_input_demo {
   width: calc( 50% - 3em );
   opacity: .6;
   padding: 0.25em;
-  /* border: 1px solid #2196f3; */
+  border: 1px solid #2196f3;
 }
 
 body > v_app {
@@ -53,11 +53,11 @@ body > v_app {
   flex: 1;
   max-width: 100%;
   outline: 1px solid black;
-  /* gap: 1em; */
 }
 
 button {
   font-size: 1em;
+  display: flex;
   background: #113d64;
   color: white;
   cursor: pointer;
@@ -71,6 +71,7 @@ button {
   white-space: nowrap;
   align-items: center;
   justify-content: flex-start;
+  gap: .5em;
 }
 
 button:hover {
@@ -80,7 +81,7 @@ button:hover {
   box-shadow: 0 10px 20px -10px #1563a1;
 }
 
-counter_demo info, text_input_demo info {
+counter_demo info, input_text info {
   display: flex;
   user-select: text;
   flex-direction: row;
@@ -92,16 +93,14 @@ counter_demo info, text_input_demo info {
   align-items: center;
 }
 
-counter_demo h3, counter_demo p ,
-text_input_demo h3, text_input_demo p {
+counter_demo h3, counter_demo p , input_text h3, input_text p {
   margin: 0;
 }
 
-counter_demo actions , text_input_demo actions {
+counter_demo actions , input_text actions {
   display: flex;
   gap: 1em;
   flex-direction: row;
-  /* justify-content: flex-end; */
   padding: 2.5em .5em .5em .5em;
   border: 1px dashed #008000;
 }
@@ -118,14 +117,10 @@ main {
   max-width: 1280px;
   margin: 0 auto;
   background: #00000033;
-  /* border-radius: 2em; */
   padding: 2em;
-  /* outline: 1px solid #0b1825; */
-  /* box-shadow: -10px -10px 40px 0px #0b1724 inset; */
 }
 
-counter_demo info h3,
-text_input_demo info h3{
+counter_demo info h3, input_text info h3 {
   overflow: hidden;
   color: #fff;
   text-shadow: 0 0 2px black;
@@ -140,6 +135,7 @@ v_app > app_header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
   background: #00000085;
   gap: 1em;
@@ -150,8 +146,7 @@ v_app > app_header {
   width: 100%;
 }
 
-counter_demo .dataInfoPart ,
-text_input_demo info .dataInfoPart {
+counter_demo .dataInfoPart , input_text info .dataInfoPart {
   box-shadow: 0 0 20px #0d3258 inset;
   background: #164a7a;
   border: 1px solid #05081c;
@@ -161,8 +156,7 @@ text_input_demo info .dataInfoPart {
   justify-content: flex-end;
 }
 
-counter_demo .dataInfoPart p ,
-text_input_demo .dataInfoPart p {
+counter_demo .dataInfoPart p , input_text .dataInfoPart p {
   flex: 1;
 }
 
@@ -188,51 +182,27 @@ app_header h1 {
   margin: 0;
 }
 
-text_input_demo info h3.comp_id span,
-counter_demo info h3.comp_id span {
+input_text info h3.comp_id span, counter_demo info h3.comp_id span {
   color: #b3dbf2;
   font-size: 9px;
 }
 
 input {
-  
-  
-  
   outline: none;
-  
-  
-  
-
-    
-    
-    
-    margin: 0;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    text-shadow: none;
-    
-    font-family: monospace;
-    font-size: 14px;
-    
-    user-select: none;
-    color: #0a1622;font-style: normal;
-    font-weight: 100;
-    
-    
-    justify-content: center;
-    align-items: center;
-    line-height: 1em;
-    
-    white-space: nowrap;
-    padding: .65em 1em;
-    }
+  margin: 0;
+  text-shadow: none;
+  font-family: monospace;
+  font-size: 14px;
+  user-select: none;
+  color: #0a1622;
+  font-style: normal;
+  font-weight: 100;
+  justify-content: center;
+  align-items: center;
+  line-height: 1em;
+  white-space: nowrap;
+  padding: .65em 1em;
+}
 
 .dataInfoPart button.reset {
   background: #ff00003b;
@@ -245,44 +215,24 @@ input {
   left: 0;
 }
 
-actions > * {
-  /* flex: 1; */
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  /* border-radius: 1em; */
-}
-
-actions > button > i, actions > button > p {
+button > i {
   user-select: none;
   font-style: normal;
   font-weight: 100;
   display: flex;
+  background: #005293;
+  padding: .65em 1em;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   line-height: 1em;
-  padding: 0 1em;
+  font-size: 1em;
   text-shadow: 0 0 2px black;
   white-space: nowrap;
 }
 
-actions button > i {
-  padding: .65em 1em;
-  background: #005293;
-}
-
-actions > button {
-  padding: 0;
-  gap: 0;
-}
-
-v_app > app_header > * {
-  flex: 1;
-  justify-content: space-between;
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+button > p {
+  padding: 0.5em;
 }
 
 v_app > app_header > actions {
@@ -321,20 +271,16 @@ v_app > app_header > info h2 {
 }
 
 actions > button[action="reset"], button[action="reset"] {
-  border: none;
   background: #ff000033;
   display: flex;
+  border-color: #431f2e;
 }
 
 actions button[action="reset"] > i {
   background: #ff000030;
 }
 
-actions button[action="reset"] {
-  border: 2px solid #431f2e;
-}
-
-counter_demo:hover, text_input_demo:hover {
+counter_demo:hover, input_text:hover {
   opacity: 1;
 }
 
@@ -370,13 +316,41 @@ main actions:before {
   padding: 0.25em 2em;
 }
 
-counter_demo info h3.comp_id,
-text_input_demo info h3.comp_id{
+counter_demo info h3.comp_id, input_text info h3.comp_id {
   flex-direction: column;
   align-items: flex-start;
 }
 
-counter_demo .dataInfoPart button[action="reset"],
-text_input_demo .dataInfoPart button[action="reset"]{
-  padding: .5em;
+info_block {
+  padding: 1em;
+  position: relative;
+  padding-bottom: 2em;
+}
+
+info_block > h2 {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+info_block > p {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+}
+
+app_navigation {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+app_navigation > button:hover {
+  transform: none;
+  background: #0d6fbd;
+  border-color: #0d6fbd;
+}
+
+app_navigation > button {
+  flex: 0;
 }

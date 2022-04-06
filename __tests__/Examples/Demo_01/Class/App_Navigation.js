@@ -1,15 +1,9 @@
-const { V_Base, helpers, vStore } = require("../../../../../src/state_manager");
+const { V_Base, helpers } = require("../../../../src/state_manager");
 const { printButton, clickExec } = helpers;
-const { initView } = vStore;
 
 module.exports = class App_Navigation extends V_Base {
 
   constructor(props = {}) {
-
-    // Just to be able to navigate it easier [id]
-    props.id = props.id || "App_Navigation";
-
-    props.data = false;
 
     super(props);
 
