@@ -7,8 +7,8 @@
     "test": "jest",
     "start": "node app.js",
     "dev": " bash -c \" NODE_ENV=development node app.js \" ",
-    "build:example": "webpack --config __tests__/Examples/Demo_01/webpack.js",
-    "build:example.dev": "bash -c \" NODE_ENV=development npm run build:example \" "
+    "build:example.demo1": "webpack --config __tests__/Examples/Demo_01/webpack.js",
+    "build:example.demo1-dev": "bash -c \" NODE_ENV=development npm run build:example.demo1 \" "
   },
   "repository": {
     "type": "git",
