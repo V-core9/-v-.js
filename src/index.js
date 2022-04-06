@@ -12,6 +12,8 @@ const _V_ = {
 
   stateManager: require('./state_manager'),
 
+  sm2: require('./sm2'),
+
 };
 
 isDev = () => (_V_.mode.toLowerCase() !== 'production');

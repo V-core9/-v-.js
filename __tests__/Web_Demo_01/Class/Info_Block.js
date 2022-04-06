@@ -1,4 +1,4 @@
-const { V_Base, helpers, vStore } = require("../../../../src/state_manager");
+const { V_Base, helpers, vStore } = require("../../../src/state_manager");
 const { initView } = vStore;
 
 module.exports = class Info_Block extends V_Base {

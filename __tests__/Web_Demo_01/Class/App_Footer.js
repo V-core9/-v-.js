@@ -1,4 +1,4 @@
-const { V_Base } = require("../../../../src/state_manager");
+const { V_Base } = require("../../../src/state_manager");
 
 
 module.exports = class App_Footer extends V_Base {

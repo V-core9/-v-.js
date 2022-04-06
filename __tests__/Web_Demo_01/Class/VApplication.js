@@ -1,4 +1,4 @@
-const { vStore, V_Base } = require("../../../../src").stateManager;
+const { vStore, V_Base } = require("../../../src").stateManager;
 const { initView } = vStore;
 
 module.exports = class VApplication extends V_Base {

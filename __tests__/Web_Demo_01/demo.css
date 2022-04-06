@@ -53,7 +53,7 @@ body > v_app {
   flex: 1;
   max-width: 100%;
   outline: 1px solid black;
-}
+max-width: 100%;max-height: 100vh;}
 
 button {
   font-size: 1em;
@@ -118,7 +118,7 @@ main {
   margin: 0 auto;
   background: #00000033;
   padding: 2em;
-}
+flex: 1;overflow: auto;}
 
 counter_demo info h3, input_text info h3 {
   overflow: hidden;
