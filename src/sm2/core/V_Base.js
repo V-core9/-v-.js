@@ -7,7 +7,9 @@ module.exports = class V_Base {
 
     this.id = data.id || null;
 
-    this.data = data.data || null;
+    this.data = data.data || {};
+
+    this.events = data.events || null;
 
     this.view = data.view || (async () => {
       console.log(`[${await this.type()}]#${this.id}.view()`);
@@ -33,9 +35,21 @@ module.exports = class V_Base {
 
 
     this.state = async (value) => {
-      console.log(`[${await this.type()}]#${this.id}.state( ${value} )`);
-      this.data = value;
+      console.log({ class: await this.type(), id: this.id, state: JSON.stringify(value) });
+
+      if (value == undefined) return null;
+
+      if (typeof value === 'object') {
+        Object.keys(value).forEach(key => {
+          this.data[key] = value[key];
+        });
+      } else {
+        this.data = value;
+      }
+
       await this.update();
+
+      if (typeof this.events === 'function') this.events();
     };
 
     //! Print HTML Component Root Element
