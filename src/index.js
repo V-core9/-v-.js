@@ -1,14 +1,15 @@
-const packageInfo = require('../package.json') || {};
+const package = require('../package.json') || {};
 
 
 
 const _V_ = {
 
-  name: packageInfo.name || 'Application_Name_Placeholder',
-  description: packageInfo.description || 'Application Description Placeholder Text.',
-  version: packageInfo.version || 'x.x.x',
+  name: package.name || 'Application_Name_Placeholder',
+  description: package.description || 'Application Description Placeholder Text.',
+  version: package.version || 'x.x.x',
 
   mode : process.env.NODE_ENV || 'production',
+  isDev: false,
 
   stateManager: require('./state_manager'),
 
@@ -16,11 +17,13 @@ const _V_ = {
 
 };
 
-isDev = () => (_V_.mode.toLowerCase() !== 'production');
+isDev = (_V_.mode.toLowerCase() !== 'production');
 
 if (isDev) {
+  _V_.isDev = isDev;
   console.log(_V_);
 }
+
 
 
 module.exports = _V_;

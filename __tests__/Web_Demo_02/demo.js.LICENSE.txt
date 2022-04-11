@@ -1,1 +1,11 @@
-//! Methods that are runnable for this Component.
+//! 2 body elements
+
+//! 2 footer elements
+
+//! 2 header elements
+
+//! Application component with few pages that use id of the component to load it.
+
+//! Get Type / Constructor Name
+
+//! Print HTML Component Root Element

@@ -1,9 +1,10 @@
-const vStore = require('./vStore');
-const V_Base = require('./V_Base');
-const V_Components_Store = require('./V_Components_Store');
+const { V_Base, vStore } = require('./V_Base');
+const V_Store = require('./V_Store');
 
-module.exports = core = {
+
+
+module.exports = {
   V_Base,
-  vStore,
-  V_Components_Store
+  V_Store,
+  vStore
 };

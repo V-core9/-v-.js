@@ -1,5 +1,5 @@
-const { V_Base } = require("../../../src").sm2;
-
+const { sm2, isDev } = require("../../../src");
+const { V_Base } = sm2;
 
 module.exports = class Page_Focused_Status extends V_Base {
 
@@ -13,16 +13,19 @@ module.exports = class Page_Focused_Status extends V_Base {
     this.meth = {
 
       blur: async () => {
+        if (isDev) console.log(this);
         await this.state(false);
       },
 
       focus: async () => {
+        if (isDev) console.log(this);
         await this.state(true);
       },
 
     };
 
     this.view = async () => {
+      if (isDev) console.log(this);
       return "Page Focused: " + ((this.data === true) ? "🟢" : "❌");
     };
 

@@ -1,7 +1,7 @@
-const { vcsErrors } = require("../helpers/");
+const { vcsErrors } = require("../helpers");
 
 
-module.exports = class V_Components_Store {
+module.exports = class V_Store {
 
   constructor(data) {
     this._list = {};
@@ -18,11 +18,7 @@ module.exports = class V_Components_Store {
 
 
     this.add = async (vComponent) => {
-      if (["V_Base", "V_Base"].indexOf(vComponent.type()) === -1) {
-        this._list[vComponent.id] = vComponent;
-      } else {
-        throw new Error(vcsErrors.notInstance());
-      }
+      this._list[vComponent.id] = vComponent;
     };
 
 
@@ -44,18 +40,8 @@ module.exports = class V_Components_Store {
     };
 
 
-    this.render = async (componentName) => {
-      if (typeof componentName === 'string') {
-        await (await this.get(componentName)).update();
-      } else {
-        throw new Error(vcsErrors.type());
-      }
-    };
 
-
-    this.type = async () => {
-      return this.constructor.name;
-    };
+    this.type = async () => this.constructor.name;
 
 
     this.purge = async () => {
@@ -63,10 +49,8 @@ module.exports = class V_Components_Store {
     };
 
 
-    this.destroy = async () => this.purge();
 
-
-    this.init = async () => {
+    this.initAll = async () => {
 
       const compNames = Object.keys(this._list);
 
@@ -76,7 +60,7 @@ module.exports = class V_Components_Store {
 
     };
 
-    this.initView = async (compName) => {
+    this.initItem = async (compName) => {
       return await this._list[compName].init() || false;
     };
 

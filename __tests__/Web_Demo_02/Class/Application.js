@@ -1,4 +1,5 @@
-const { vStore, V_Base, helpers } = require("../../../src").sm2;
+const { sm2, isDev } = require("../../../src");
+const { vStore, V_Base, helpers } = sm2;
 const { clickExec } = helpers;
 
 module.exports = class App extends V_Base {
@@ -7,10 +8,12 @@ module.exports = class App extends V_Base {
 
     super(props);
 
+    if(isDev) console.log(this);
 
     this.meth = {
 
       load: async () => {
+        if(isDev) console.log(this);
         const currentPage = this.data.pages[this.data.currentPage];
 
         await this.state({
@@ -26,17 +29,20 @@ module.exports = class App extends V_Base {
       },
 
       home: async () => {
-        await this.state({ currentPage: "home" });
+        if(isDev) console.log(this);
+        this.data.currentPage = "home";
         await this.meth.load();
       },
 
       about: async () => {
-        await this.state({ currentPage: "about" });
+        if(isDev) console.log(this);
+        this.data.currentPage = "about";
         await this.meth.load();
       },
 
       demo: async () => {
-        await this.state({ currentPage: "demo" });
+        if(isDev) console.log(this);
+        this.data.currentPage = "demo";
         await this.meth.load();
       }
 
@@ -51,6 +57,7 @@ module.exports = class App extends V_Base {
 
 
     this.view = async () => {
+      if(isDev) console.log(this);
       return `${await this.data.header.init()}
               ${await this.data.body.init()}
               ${await this.data.footer.init()}
@@ -62,6 +69,7 @@ module.exports = class App extends V_Base {
     };
 
 
+    if(isDev) console.log(this);
     window.addEventListener("load", this.meth.load);
 
   }
